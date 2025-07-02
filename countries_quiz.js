@@ -92,6 +92,9 @@ function initGame() {
         restartBtn.style.display = 'none';
     }
     
+    // Remove any existing restart keypress listener
+    document.removeEventListener('keypress', handleRestartKeypress);
+    
     // Re-enable input and buttons
     countryInput.disabled = false;
     submitBtn.disabled = false;
@@ -116,7 +119,7 @@ function checkAnswer() {
     
     // Check if input is empty
     if (userInput === '') {
-        showMessage('Please enter a country name', 'incorrect');
+        // showMessage('Please enter a country name', 'incorrect');
         return;
     }
     
@@ -193,6 +196,18 @@ function showMessage(text, type) {
 function showRestartButton() {
     // Show restart button
     restartBtn.style.display = 'block';
+    
+    // Add event listener for Enter key to restart game
+    document.addEventListener('keypress', handleRestartKeypress);
+}
+
+function handleRestartKeypress(e) {
+    if (e.key === 'Enter') {
+        // Remove this event listener
+        document.removeEventListener('keypress', handleRestartKeypress);
+        // Restart the game
+        initGame();
+    }
 }
 
 function giveUp() {
