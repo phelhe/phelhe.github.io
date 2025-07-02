@@ -823,6 +823,8 @@ let words = [
       {
         "Word": "Prodigious",
         "Definition": "Enormous, extraordinary, or impressively large in size, extent, or degree, often used to describe something remarkable or remarkable."
-      }
+      },
+      "disingenuous"
+
   ]
   
