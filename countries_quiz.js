@@ -46,6 +46,7 @@ const progressDisplay = document.querySelector('.progress');
 const countryInput = document.getElementById('countryInput');
 const submitBtn = document.getElementById('submitBtn');
 const giveUpBtn = document.getElementById('giveUpBtn');
+const restartBtn = document.getElementById('restartBtn');
 const messageDisplay = document.querySelector('.message');
 const countriesList = document.querySelector('.countries-list');
 
@@ -86,9 +87,20 @@ function initGame() {
     // Clear countries list
     countriesList.innerHTML = '';
     
+    // Hide restart button if visible
+    if (restartBtn) {
+        restartBtn.style.display = 'none';
+    }
+    
+    // Re-enable input and buttons
+    countryInput.disabled = false;
+    submitBtn.disabled = false;
+    giveUpBtn.disabled = false;
+    
     // Add event listeners
     submitBtn.addEventListener('click', checkAnswer);
     giveUpBtn.addEventListener('click', giveUp);
+    restartBtn.addEventListener('click', initGame);
     countryInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             checkAnswer();
@@ -155,12 +167,10 @@ function checkAnswer() {
     if (foundCountries.length === countriesWithLetter.length) {
         showMessage(`Congratulations! You found all ${countriesWithLetter.length} countries starting with ${currentLetter}!`, 'correct');
         
-        // Add option to play again
+        // Show restart button
         setTimeout(() => {
-            if (confirm('Play again with a new letter?')) {
-                initGame();
-            }
-        }, 1500);
+            showRestartButton();
+        }, 0);
     }
 }
 
@@ -178,6 +188,11 @@ function updateProgress() {
 function showMessage(text, type) {
     messageDisplay.textContent = text;
     messageDisplay.className = `message ${type}`;
+}
+
+function showRestartButton() {
+    // Show restart button
+    restartBtn.style.display = 'block';
 }
 
 function giveUp() {
@@ -215,14 +230,8 @@ function giveUp() {
     submitBtn.disabled = true;
     giveUpBtn.disabled = true;
     
-    // Add option to play again
+    // Show restart button
     setTimeout(() => {
-        if (confirm('Play again with a new letter?')) {
-            initGame();
-            // Re-enable input and buttons
-            countryInput.disabled = false;
-            submitBtn.disabled = false;
-            giveUpBtn.disabled = false;
-        }
-    }, 1500);
+        showRestartButton();
+    }, 0);
 }
