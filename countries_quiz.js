@@ -124,7 +124,8 @@ function checkAnswer() {
     
     // Check if it's a valid country
     if (!matchedCountry) {
-        showMessage(`${userInput} is not a valid country or doesn't start with ${currentLetter}`, 'incorrect');
+        // Since we already checked the starting letter above, we know it starts with the correct letter
+        showMessage(`"${userInput}" is not in our list of countries`, 'incorrect');
         return;
     }
     
