@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.letter-display {
+    margin-bottom: 2rem;
+}
+
+.letter {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #3498db;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.progress {
+    font-size: 1.25rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#countryInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#countryInput:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#giveUpBtn {
+    background-color: #e74c3c;
+}
+
+#giveUpBtn:hover {
+    background-color: #c0392b;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.message {
+    min-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.correct {
+    color: #27ae60;
+}
+
+.incorrect {
+    color: #e74c3c;
+}
+
+.info {
+    color: #3498db;
+}
+
+.countries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.country-tag {
+    background-color: #e8f4fc;
+    color: #2980b9;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.country-tag.revealed {
+    background-color: #fdeaeb;
+    color: #e74c3c;
+    border: 1px dashed #e74c3c;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.8;
+}

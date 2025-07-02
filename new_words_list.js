@@ -7,6 +7,7 @@ let words = [
       "Word": "Obstinate",
       "Definition": "Describes a person who is stubborn and unwilling to change their opinion, attitude, or behavior."
     },
+    //
     {
       "Word": "Contingent",
       "Definition": "Relating to something that is dependent on certain conditions or circumstances; it can also mean a group of people with a common characteristic or purpose."

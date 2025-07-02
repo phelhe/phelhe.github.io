@@ -1,25 +1,28 @@
 <html>
 
 <head>
-    <title>NEW WORDS</title>
+    <title>COUNTRIES QUIZ</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="new_words.css">
+    <link rel="stylesheet" type="text/css" href="countries_quiz.css">
 </head>
 
 <body class="font">
-    <div class="cards-container">
-        <div class="card shadow offwhite">
-            <div id="card-title" class="card-title">
-            </div>
-            <div id="card-text" class="curr-text"></div>
+    <div class="quiz-container">
+        <h1>Countries Quiz</h1>
+        <div class="letter-display">
+            <p>Name all countries that start with:</p>
+            <div class="letter">A</div>
         </div>
-        <div style="margin-top: 20px;">
-            <button id="normal">NORMAL MODE</button>
-            <button id="fav">FAV MODE</button>
+        <div class="progress">0/0</div>
+        <div class="input-container">
+            <input type="text" id="countryInput" placeholder="Enter a country name..." autocomplete="off">
+            <button id="submitBtn">Submit</button>
+            <button id="giveUpBtn">Give Up</button>
         </div>
+        <div class="message"></div>
+        <div class="countries-list"></div>
     </div>
-</bodY>
-<script type="text/javascript" src="new_words_list.js"></script>
-<script type="text/javascript" src="new_words.js"></script>
+</body>
+<script type="text/javascript" src="countries_quiz.js"></script>
 
 </html>
